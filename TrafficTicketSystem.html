@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Traffic Ticket System</h1>
+    Car Velocity: <input type="number" name="txtvel" id="txtvel"> km/h.
+    <input type="button" value="check" onclick="calculate()">
+    <div id="result"></div>
+    <script>
+        
+        function calculate() {
+            var txtvel = document.querySelector("#txtvel")
+            var result = document.querySelector("#result")
+            var vel = Number(txtvel.value)
+            result.innerHTML = `<p>Your current speed is <strong>${vel}km/h</strong>.</p>`
+            if(vel > 60){
+                result.innerHTML += `<p>You're <strong>TICKETED</strong> for speeding!</p>`
+            }
+            result.innerHTML += `Always drive with a seat belt!`
+        }
+    </script>
+</body>
+</html>
